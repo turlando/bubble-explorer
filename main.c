@@ -16,11 +16,19 @@ void bubble_sort(unsigned int *vec, unsigned int size) {
     for (unsigned int i = 0; i < size - 1; i++) {
         for (unsigned int j = 0; j < size - i - 1; j++) {
             if (vec[j] > vec[j+1]) {
-                print_vec_color_2(vec, VEC_SIZE, SPAN, VEC_SIZE - i, j, j + 1);
+                print_vec_swap(vec, VEC_SIZE,
+                               SPAN, VEC_SIZE - i,
+                               j, j + 1,
+                               "Swap!");
                 swap(vec + j, vec + j + 1);
-                print_vec_color_2(vec, VEC_SIZE, SPAN, VEC_SIZE - i, j + 1, j);
+                print_vec_swap(vec, VEC_SIZE,
+                               SPAN, VEC_SIZE - i,
+                               j + 1, j,
+                               NULL);
             } else {
-                print_vec_color_1(vec, VEC_SIZE, SPAN, VEC_SIZE - i, j);
+                print_vec_noswap(vec, VEC_SIZE,
+                                 SPAN, VEC_SIZE - i,
+                                 j);
             }
         }
     }
