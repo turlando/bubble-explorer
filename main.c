@@ -8,12 +8,6 @@
 #define SPAN     8
 #define DELAY    2
 
-void vec_init(unsigned int *v, unsigned int size) {
-    for (unsigned int i = 0; i < size; ++i) {
-        v[i] = rand_int(VAL_MAX);
-    }
-}
-
 void bubble_sort(unsigned int *vec, unsigned int size) {
     for (unsigned int i = 0; i < size - 1; i++) {
         for (unsigned int j = 0; j < size - i - 1; j++) {
@@ -39,7 +33,7 @@ void bubble_sort(unsigned int *vec, unsigned int size) {
 
 int main(void) {
     unsigned int vec[VEC_SIZE];
-    vec_init(vec, VEC_SIZE);
+    vec_init(vec, VEC_SIZE, VAL_MAX);
 
     bubble_sort(vec, VEC_SIZE);
 
