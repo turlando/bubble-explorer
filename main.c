@@ -1,10 +1,12 @@
 #include <stdio.h>
+#include <unistd.h>
 #include "utils.h"
 #include "ui.h"
 
 #define VEC_SIZE 10
 #define VAL_MAX  99
 #define SPAN     8
+#define DELAY    2
 
 void vec_init(unsigned int *v, unsigned int size) {
     for (unsigned int i = 0; i < size; ++i) {
@@ -30,6 +32,7 @@ void bubble_sort(unsigned int *vec, unsigned int size) {
                                  SPAN, VEC_SIZE - i,
                                  j);
             }
+            sleep(DELAY);
         }
     }
 }
