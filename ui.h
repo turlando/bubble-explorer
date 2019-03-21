@@ -3,9 +3,6 @@
 
 #define SEPARATOR_CHAR '|'
 
-void print_vec_item(unsigned int *, unsigned int, unsigned int);
-void print_item_separator(unsigned int);
-void print_separator_line(unsigned int, unsigned int);
 void print_vec_noswap(unsigned int *, unsigned int,
                       unsigned int, unsigned int,
                       unsigned int);
