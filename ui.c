@@ -60,7 +60,7 @@ void print_vec_swap(unsigned int *v, unsigned int size,
     if (notes != NULL)
         printf("%*s\n", 2 * span_size, notes);
     else
-        printf("\n");
+        putchar('\n');
 
     print_separator_line(span_size, separator_item);
 }
@@ -80,6 +80,6 @@ void print_vec_noswap(unsigned int *v, unsigned int size,
             print_item_separator(span_size);
     }
 
-    printf("\n");
+    putchar('\n');
     print_separator_line(span_size, separator_item);
 }
