@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <time.h>
 #include "utils.h"
 #include "ui.h"
 
@@ -32,6 +33,8 @@ void bubble_sort(unsigned int *vec, unsigned int size) {
 }
 
 int main(void) {
+    srand(time(NULL));
+
     unsigned int vec[VEC_SIZE];
     vec_init(vec, VEC_SIZE, VAL_MAX);
 
