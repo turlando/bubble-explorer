@@ -15,7 +15,8 @@
 
 ## Usage
 
-Just run the `main` binary.
+Just run the `main` binary. Make sure your terminal emulator supports ANSI
+escape sequences.
 
 ## License
 
