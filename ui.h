@@ -3,6 +3,9 @@
 
 #define SEPARATOR_CHAR '|'
 
+void print_vec_boxed(unsigned int *, unsigned int,
+                     unsigned int);
+
 void print_vec_noswap(unsigned int *, unsigned int,
                       unsigned int, unsigned int,
                       unsigned int);

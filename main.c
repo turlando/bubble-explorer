@@ -35,7 +35,9 @@ int main(void) {
     unsigned int vec[VEC_SIZE];
     vec_init(vec, VEC_SIZE, VAL_MAX);
 
+    print_vec_boxed(vec, VEC_SIZE, SPAN);
     bubble_sort(vec, VEC_SIZE);
+    print_vec_boxed(vec, VEC_SIZE, SPAN);
 
     return 0;
 }

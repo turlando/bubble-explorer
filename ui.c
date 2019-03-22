@@ -22,6 +22,23 @@ static void print_separator_line(unsigned int span_size,
     printf("%*c\n", span_size * (span_item + 1), SEPARATOR_CHAR);
 }
 
+void print_vec_boxed(unsigned int *v, unsigned int size,
+               unsigned int span_size) {
+    for (unsigned int i = 0; i < size * (span_size + 1); ++i)
+        putchar('-');
+    putchar('\n');
+
+    for (unsigned int i = 0; i < size; ++i) {
+        print_vec_item(v, i, span_size);
+    }
+
+    putchar('\n');
+
+    for (unsigned int i = 0; i < size * (span_size + 1); ++i)
+        putchar('-');
+    putchar('\n');
+}
+
 void print_vec_swap(unsigned int *v, unsigned int size,
                     unsigned int span_size, unsigned int separator_item,
                     unsigned int a, unsigned int b,
