@@ -23,7 +23,6 @@ enum rt_style {
     WHITE
 };
 
-
 int rtprintf(enum rt_style style, const char *fmt, ...);
 
 #endif /* BUBBLE_RTPRINTF */

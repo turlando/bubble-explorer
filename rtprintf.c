@@ -4,13 +4,13 @@
 #include <stdio.h>
 
 /* Rich Text printf
-   TODO: write doc
+ * Same as printf, but allows styled output through the style parameter.
  */
 int rtprintf(enum rt_style style, const char *fmt, ...) {
+    int ret = 0;
+
     va_list argp;
     va_start(argp, fmt);
-
-    int ret = 0;
 
     switch (style) {
         case BLACK:
