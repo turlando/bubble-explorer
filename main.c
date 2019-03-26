@@ -10,29 +10,8 @@
 #define SPAN     8U
 #define DELAY    2U
 
-void bubble_sort(unsigned int *vec, unsigned int size,
-                 unsigned int span) {
-    for (unsigned int i = 0; i < size - 1; ++i) {
-        for (unsigned int j = 0; j < size - i - 1; ++j) {
-            if (vec[j] > vec[j + 1]) {
-                print_vec_swap(vec, size,
-                               span, size - i,
-                               j, j + 1,
-                               "Swap!");
-                swap(vec + j, vec + j + 1);
-                print_vec_swap(vec, size,
-                               span, size - i,
-                               j + 1, j,
-                               NULL);
-            } else {
-                print_vec_noswap(vec, size,
-                                 span, size - i,
-                                 j);
-            }
-            sleep(DELAY);
-        }
-    }
-}
+void bubble_sort(unsigned int *, unsigned int,
+                 unsigned int);
 
 int main(void) {
     unsigned int vec_unsorted[VEC_SIZE];
@@ -62,4 +41,28 @@ int main(void) {
     print_vec_boxed(vec_sorted, VEC_SIZE, SPAN);
 
     return 0;
+}
+
+void bubble_sort(unsigned int *vec, unsigned int size,
+                 unsigned int span) {
+    for (unsigned int i = 0; i < size - 1; ++i) {
+        for (unsigned int j = 0; j < size - i - 1; ++j) {
+            if (vec[j] > vec[j + 1]) {
+                print_vec_swap(vec, size,
+                               span, size - i,
+                               j, j + 1,
+                               "Swap!");
+                swap(vec + j, vec + j + 1);
+                print_vec_swap(vec, size,
+                               span, size - i,
+                               j + 1, j,
+                               NULL);
+            } else {
+                print_vec_noswap(vec, size,
+                                 span, size - i,
+                                 j);
+            }
+            sleep(DELAY);
+        }
+    }
 }
