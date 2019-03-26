@@ -5,10 +5,10 @@
 #include "utils.h"
 #include "ui.h"
 
-#define VEC_SIZE 10
-#define VAL_MAX  99
-#define SPAN     8
-#define DELAY    2
+#define VEC_SIZE 10U
+#define VAL_MAX  99U
+#define SPAN     8U
+#define DELAY    2U
 
 void bubble_sort(unsigned int *vec, unsigned int size,
                  unsigned int span) {
