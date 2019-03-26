@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include "rtprintf.h"
 
+#define SEPARATOR_CHAR '|'
+
 /* Print a single item indexed by i in the vector v.
  * The printed string takes span_size characters and the text is padded
  * to the right.
