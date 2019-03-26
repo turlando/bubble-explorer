@@ -35,20 +35,31 @@ void bubble_sort(unsigned int *vec, unsigned int size,
 }
 
 int main(void) {
+    unsigned int vec_unsorted[VEC_SIZE];
+    unsigned int vec_sorted[VEC_SIZE];
+
     srand(time(NULL));
 
-    unsigned int vec[VEC_SIZE];
-    vec_init(vec, VEC_SIZE, VAL_MAX);
+    vec_init(vec_unsorted, VEC_SIZE, VAL_MAX);
+    vec_dup(vec_sorted, vec_unsorted, VEC_SIZE);
 
     printf("Randomly picked array of %u positive integers:\n", VEC_SIZE);
-    print_vec_boxed(vec, VEC_SIZE, SPAN);
+    print_vec_boxed(vec_unsorted, VEC_SIZE, SPAN);
     putchar('\n');
 
     printf("Sorting will start in a few...\n");
     sleep(DELAY);
 
-    bubble_sort(vec, VEC_SIZE, SPAN);
-    print_vec_boxed(vec, VEC_SIZE, SPAN);
+    bubble_sort(vec_sorted, VEC_SIZE, SPAN);
+
+    putchar('\n');
+
+    printf("Before:\n");
+    print_vec_boxed(vec_unsorted, VEC_SIZE, SPAN);
+    putchar('\n');
+
+    printf("After:\n");
+    print_vec_boxed(vec_sorted, VEC_SIZE, SPAN);
 
     return 0;
 }
