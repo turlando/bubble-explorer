@@ -24,3 +24,11 @@ void vec_init(unsigned int *v, unsigned int size, unsigned int max) {
         v[i] = rand_int(max);
     }
 }
+
+/* Copy src vector to dst.
+ */
+void vec_dup(unsigned int *dst, unsigned int *src, unsigned int size) {
+    for (unsigned int i = 0; i < size; ++i) {
+        dst[i] = src[i];
+    }
+}
