@@ -40,7 +40,13 @@ int main(void) {
     unsigned int vec[VEC_SIZE];
     vec_init(vec, VEC_SIZE, VAL_MAX);
 
+    printf("Randomly picked array of %u positive integers:\n", VEC_SIZE);
     print_vec_boxed(vec, VEC_SIZE, SPAN);
+    putchar('\n');
+
+    printf("Sorting will start in a few...\n");
+    sleep(DELAY);
+
     bubble_sort(vec, VEC_SIZE, SPAN);
     print_vec_boxed(vec, VEC_SIZE, SPAN);
 
