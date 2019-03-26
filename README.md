@@ -4,7 +4,7 @@
 
 ### Dependencies
 
-* ANSI C compiler
+* C99 compiler
 * GNU make
 
 ### Compile
