@@ -1,5 +1,7 @@
 #include "utils.h"
 
+#include <stdlib.h>
+
 unsigned int rand_int(unsigned int max) {
     return rand() % (max + 1);
 }
