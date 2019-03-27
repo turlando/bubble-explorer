@@ -42,7 +42,7 @@ int rtprintf(enum rt_style style, const char *fmt, ...) {
     ret += vprintf(fmt, argp);
     va_end(argp);
 
-    ret =+ printf("\033[0m");
+    ret += printf("\033[0m");
 
     return ret;
 }
