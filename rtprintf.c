@@ -14,28 +14,28 @@ int rtprintf(enum rt_style style, const char *fmt, ...) {
 
     switch (style) {
         case BLACK:
-            ret = printf(ANSI_FG_BLACK);
+            ret += printf(ANSI_FG_BLACK);
             break;
         case RED:
-            ret = printf(ANSI_FG_RED);
+            ret += printf(ANSI_FG_RED);
             break;
         case GREEN:
-            ret = printf(ANSI_FG_GREEN);
+            ret += printf(ANSI_FG_GREEN);
             break;
         case YELLOW:
-            ret = printf(ANSI_FG_YELLOW);
+            ret += printf(ANSI_FG_YELLOW);
             break;
         case BLUE:
-            ret = printf(ANSI_FG_BLUE);
+            ret += printf(ANSI_FG_BLUE);
             break;
         case MAGENTA:
-            ret = printf(ANSI_FG_MAGENTA);
+            ret += printf(ANSI_FG_MAGENTA);
             break;
         case CYAN:
-            ret = printf(ANSI_FG_CYAN);
+            ret += printf(ANSI_FG_CYAN);
             break;
         case WHITE:
-            ret = printf(ANSI_FG_WHITE);
+            ret += printf(ANSI_FG_WHITE);
             break;
     }
 
