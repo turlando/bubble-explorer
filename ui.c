@@ -5,6 +5,14 @@
 
 #define SEPARATOR_CHAR '|'
 
+/* Print an horizontal border long as much as the vector being boxed.
+ */
+static void print_box_border(unsigned int size, unsigned int span_size) {
+    for (unsigned int i = 0; i < (size + 1) * span_size; ++i)
+        putchar('-');
+    putchar('\n');
+}
+
 /* Print a single item indexed by i in the vector v.
  * The printed string takes span_size characters and the text is padded
  * to the right.
@@ -45,19 +53,13 @@ static void print_separator_line(unsigned int span_size,
  */
 void print_vec_boxed(unsigned int *v, unsigned int size,
                      unsigned int span_size) {
-    for (unsigned int i = 0; i < size * (span_size + 1); ++i)
-        putchar('-');
-    putchar('\n');
+    print_box_border(size, span_size);
 
-    for (unsigned int i = 0; i < size; ++i) {
+    for (unsigned int i = 0; i < size; ++i)
         print_vec_item(v, i, span_size);
-    }
-
     putchar('\n');
 
-    for (unsigned int i = 0; i < size * (span_size + 1); ++i)
-        putchar('-');
-    putchar('\n');
+    print_box_border(size, span_size);
 }
 
 /* Print the whole vector v specifying its size and the total span_size
