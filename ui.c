@@ -40,12 +40,12 @@ static void print_item_separator(unsigned int span_size) {
     printf("%*c", span_size, SEPARATOR_CHAR);
 }
 
-/* Print an empty line containing the item separator only, placed between
- * the item indexed by span_item and the following one (if any).
+/* Print an empty line containing the item separator only, placed after
+ * the item indexed by separator_item.
  */
 static void print_separator_line(unsigned int span_size,
-                                 unsigned int span_item) {
-    printf("%*c\n", span_size * (span_item + 1), SEPARATOR_CHAR);
+                                 unsigned int separator_item) {
+    printf("%*c\n", span_size * (separator_item + 2), SEPARATOR_CHAR);
 }
 
 /* Print the whole vector v specifying its size and the total span_size
@@ -64,8 +64,8 @@ void print_vec_boxed(unsigned int *v, unsigned int size,
 
 /* Print the whole vector v specifying its size and the total span_size
  * space a single item will take.
- * A separator is placed between the item indexed by separator_item and
- * the following one (if any).
+ * A separator is placed after the item indexed by separator_item and item
+ * takes a block of span characters.
  * The items indexed by a and b are printed using two different colors.
  * All the other items are printed using the default style.
  * A simple aside note is printed (max one line wide).
@@ -84,7 +84,7 @@ void print_vec_swap(unsigned int *v, unsigned int size,
         else
             print_vec_item(v, i, span_size);
 
-        if (i == separator_item - 1)
+        if (i == separator_item)
             print_item_separator(span_size);
     }
 
@@ -98,8 +98,8 @@ void print_vec_swap(unsigned int *v, unsigned int size,
 
 /* Print the whole vector v specifying its size and the total span_size
  * space a single item will take.
- * A separator is placed between the item indexed by separator_item and
- * the following one (if any).
+ * A separator is placed after the item indexed by separator_item and item
+ * takes a block of span characters.
  * The items indexed by a and a + 1 are printed using the same color
  * which differs from all the other items, which are printed using the
  * default style.
@@ -115,7 +115,7 @@ void print_vec_noswap(unsigned int *v, unsigned int size,
         else
             print_vec_item(v, i, span_size);
 
-        if (i == separator_item - 1)
+        if (i == separator_item)
             print_item_separator(span_size);
     }
 
